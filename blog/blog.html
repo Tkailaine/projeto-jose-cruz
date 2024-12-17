@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini-Blog Responsivo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .blog-card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .blog-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .blog-title {
+            font-size: 1.2rem;
+            color: #333;
+            margin: 15px 0 10px;
+        }
+
+        .blog-summary {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .read-more {
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+            margin-top: auto;
+            align-self: flex-start;
+        }
+
+        .pagination {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .pagination a {
+            text-decoration: none;
+            margin: 0 10px;
+            color: #007BFF;
+            font-weight: bold;
+        }
+
+        .pagination a:hover {
+            text-decoration: underline;
+        }
+
+        .news-page {
+            display: none;
+        }
+
+        .news-page h1 {
+            color: #333;
+            margin-top: 20px;
+        }
+
+        .news-page p {
+            color: #555;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 768px) {
+            .blog-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .btn-inicio{
+            display: block;
+            border: none;
+            width: 120px;
+            height: 30px;
+            border-radius: 10px;
+            color: white;
+            font-size: 1.2em;
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.178);
+            background-color: #007BFF;
+            margin: 50px auto;
+            cursor: pointer;
+        }
+
+        .btn-inicio:hover{
+            background-color: #022d5c;
+            transition-duration: 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Notícias</h1>
+        <!-- Grid de notícias -->
+        <div id="news-container" class="blog-grid">
+            
+            <div class="blog-card" data-title="Fraudes bancárias na obtenção do cartão de crédito consignado RMC/RCC"
+            data-content="
+        
+            <p>O crédito consignado no Brasil foi criado para facilitar o acesso ao crédito, especialmente para aposentados e pensionistas do INSS, com taxas reduzidas. No entanto, tem sido alvo de fraudes, especialmente envolvendo os cartões RMC (Reserva de Margem Consignável) e RCC (Reserva de Crédito Consignado), frequentemente contratados sem o consentimento ou a devida ciência dos consumidores.</p>
+            
+          <p><h2>A Mecânica da Fraude</h2></p>
+            <p>Fraudadores se aproveitam da vulnerabilidade de aposentados e pensionistas, muitas vezes idosos com baixa escolaridade ou dificuldade em entender contratos financeiros. O consumidor, geralmente, acredita que está contratando um empréstimo consignado tradicional, mas acaba com um cartão de crédito que implica em descontos indevidos no benefício previdenciário.</p>
+            
+            <p>A fraude ocorre pela falta de transparência. Instituições financeiras omitem informações essenciais, como o desconto de parcelas mínimas diretamente do benefício ou as altas taxas de juros quando o limite de crédito é utilizado. Em alguns casos, há até falsificação de assinaturas e uso indevido de dados pessoais.</p>
+            
+           <p><h2> Consequências para o Consumidor</p></h2>
+            <p>Essas fraudes resultam em endividamento descontrolado, pois o pagamento das parcelas mínimas não diminui a dívida principal. Isso compromete ainda mais a renda do beneficiário, gerando impactos financeiros e emocionais significativos. O problema só é identificado quando os descontos são feitos no benefício, tornando difícil a reparação imediata.</p>
+            
+            <p><h2>Como Prevenir?</p></h2>
+            <p>Prevenir fraudes bancárias envolve cuidados simples, como:</p>
+            
+           <ul> <li>Exigir informações claras: Solicite explicações detalhadas antes de contratar qualquer crédito e desconfie de promessas de liberação rápida.
+           <li> Ler o contrato com atenção: Verifique todas as cláusulas antes de assinar e, se necessário, peça ajuda de um advogado ou familiar.
+           <li> Evitar fornecer dados pessoais por telefone ou internet: Não compartilhe informações sem garantir a origem da oferta.
+           <li> Acompanhar os extratos: Verifique regularmente o extrato do seu benefício para identificar descontos não autorizados.
+            <li>Denunciar irregularidades: Registre boletim de ocorrência e denuncie a fraude ao Banco Central e ao Procon.
+           
+            <p>A contratação indevida de cartões RMC/RCC é uma prática abusiva que prejudica os consumidores e fere seus direitos. A informação e conscientização são essenciais para prevenir fraudes. É importante que aposentados e pensionistas, bem como todos os consumidores, se protejam, garantindo que suas finanças não sejam comprometidas por práticas ilegais.</p></ul>
+           ">
+           <img src="../imagens/consignado.jpg" alt="Imagem da notícia">
+           <h2 class="blog-title">Fraudes bancárias na obtenção do cartão de crédito consignado RMC/RCC</h2>
+           <p class="blog-summary">Fraudes bancárias em cartões de crédito consignado (RMC/RCC) estão prejudicando aposentados e pensionistas do INSS.</p>
+           <p class="blog-meta">Fonte: Migalhas - Data: 04/12/2024</p>
+           <a href="#" class="read-more" onclick="openNews(this)">Leia mais</a>
+       </div>
+       
+           
+            <div class="blog-card" data-title="Seguro prestamista em financiamentos de veículos" 
+                 data-content="
+
+                 <p>A venda casada é uma prática prejudicial que ainda persiste em muitos contratos de financiamento de veículos. Especialmente no que diz respeito ao seguro prestamista, ela surge como uma condição imposta para a liberação do crédito, configurando-se em uma violação dos direitos do consumidor. Embora seja apresentado como uma proteção, o seguro prestamista, quando exigido como parte do financiamento, caracteriza-se como uma prática abusiva, que o Código de Defesa do Consumidor (CDC) proíbe explicitamente.</p>
+                 
+                 <p><h2>O que é o Seguro Prestamista?</h2><p>
+                 O seguro prestamista é uma modalidade de seguro associada a financiamentos, cujo objetivo principal é quitar a dívida em casos de falecimento, invalidez ou desemprego involuntário do titular do financiamento. Embora tenha sua utilidade em situações emergenciais, a contratação do seguro deve ser uma escolha do consumidor, e não uma imposição.
+                 
+                 <p>No entanto, é comum que instituições financeiras e concessionárias exijam a contratação desse seguro como condição para a aprovação do financiamento. Essa imposição torna a contratação do seguro uma prática abusiva e, por consequência, ilegal.</p>
+                 
+                <p> A Venda Casada e sua Proibição pelo CDC
+                 De acordo com o artigo 39, inciso I, do Código de Defesa do Consumidor, a venda casada é expressamente proibida. Isso significa que nenhum fornecedor de produtos ou serviços pode condicionar a venda de um bem, como um veículo financiado, à aquisição de outro produto, como o seguro prestamista.</p>
+                 
+                 <p>Essa prática fere a liberdade de escolha do consumidor, que é coagido a contratar algo que não deseja. O Superior Tribunal de Justiça (STJ), por meio do Tema 972, reafirmou esse entendimento, considerando a imposição do seguro prestamista sem o consentimento claro e informado do consumidor como uma prática ilegal e passível de reparação judicial.</p>
+                 
+                 <p><h2>Como Proteger seus Direitos</h2></p>
+                 Se você foi induzido a contratar um seguro prestamista ao financiar um veículo, sem ter sido devidamente informado ou sem ter tido a liberdade de escolha, é fundamental que tome providências. A venda casada é um ato ilegal, e o Código de Defesa do Consumidor está ao seu lado para garantir que seus direitos sejam respeitados.
+                 
+                <p> Caso você tenha sido vítima dessa prática, é possível buscar a revisão do contrato e exigir a devolução dos valores pagos de forma indevida. Ao se deparar com situações como essa, a orientação de um advogado especializado é essencial para que você possa reverter a imposição e proteger os seus direitos.</p>">
+                <img src="../imagens/financiamento.jpg" alt="Imagem da notícia">
+                <h2 class="blog-title">Seguro prestamista em financiamentos de veículos</h2>
+                <p class="blog-summary">De que forma a imposição de seguros prestamistas em financiamentos de veículos configura prática abusiva.</p>
+                <p class="blog-meta">Fonte: Migalhas - Data: 01/10/2024</p>
+                <a href="#" class="read-more" onclick="openNews(this)">Leia mais</a>
+            </div>
+
+            <div class="blog-card" data-title="Diferenças entre Inventário, Arrolamento e Alvará Judicial: Como escolher o procedimento adequado?" 
+            data-content="
+
+            <p>O inventário é o procedimento legal para transferir os bens de um falecido aos herdeiros. Contudo, nem sempre esse processo é necessário, dependendo do valor do patrimônio e da quantidade de herdeiros. Além disso, é importante verificar as dívidas do falecido, pois o espólio inclui tanto direitos quanto deveres.</p>
+
+            <p><h2>Tipos de Inventário</p></h2>
+            <p>O inventário judicial é utilizado quando há herdeiro menor ou incapaz, existe testamento, ou quando não há consenso entre os herdeiros. O juiz decide a partilha dos bens, de acordo com as cotas de cada um.</p>
+
+           <p>O inventário extrajudicial, mais rápido e econômico, pode ser feito em cartório quando todos os herdeiros são maiores e capazes, não há testamento ou disputas entre as partes. Ambos os tipos de inventário exigem a presença de um advogado.</p>
+
+           <p><h2>O Arrolamento</h2></p>
+            <p>O arrolamento judicial, previsto no artigo 659 do CPC, pode ser usado quando há consenso entre os herdeiros. É mais comum quando há um único herdeiro ou quando o valor dos bens não ultrapassa 1.000 salários mínimos. O arrolamento também pode ser realizado com a concordância do Ministério Público quando o único herdeiro for menor ou incapaz.</p>
+
+            <p><h2>Alvará Judicial</h2></p>
+            <p>Em casos de bens simples ou de baixo valor, como saldos bancários ou FGTS, pode ser usado o alvará judicial. Esse procedimento é mais rápido e menos custoso que o inventário. Também pode ser utilizado quando o falecido deixou obrigações não cumpridas, como a venda de um imóvel.</p>
+
+            <p><h2>Mudança no Entendimento do Tribunal de São Paulo</h2></p>
+            <p>Atualmente, está sendo consolidado no Tribunal de São Paulo o entendimento de que, mesmo quando o falecido não deixou bens materiais, o valor de condenações judiciais é considerado um bem a ser inventariado. Isso significa que, para o levantamento de valores de processos judiciais após o falecimento, é necessário abrir um alvará, inventário ou formal de partilha, mesmo que o falecido não possuísse outros bens.</p>
+
+           <p><h2>Conclusão</p></h2>
+            <p>Embora o inventário judicial seja uma opção, procedimentos como o inventário extrajudicial e o arrolamento são mais rápidos e eficientes quando há consenso entre os herdeiros. O alvará judicial é uma alternativa para bens de baixo valor ou obrigações simples. No entanto, é importante ficar atento ao novo entendimento sobre a necessidade de inventário ou formal de partilha para o levantamento de valores de condenações judiciais.</p>">
+                <img src="../imagens/divisao-bens.jpg" alt="Imagem da notícia">
+                <h2 class="blog-title">Diferenças entre Inventário, Arrolamento e Alvará Judicial: Como escolher o procedimento adequado?</h2>
+                <p class="blog-summary">Entenda as diferenças entre inventário, arrolamento e alvará judicial: Quando cada procedimento é adequado para a transmissão de bens e como escolher a melhor opção.</p>
+                <p class="blog-meta">Fonte: Migalhas - Data: 19/03/2024</p>
+                <a href="#" class="read-more" onclick="openNews(this)">Leia mais</a>
+            </div>
+
+
+            <div class="blog-card" data-title="TJ-SP define que banco é responsável por fraude realizada por golpista" 
+            data-content="
+
+            <p>A responsabilidade das instituições financeiras por fraudes cometidas por terceiros foi reafirmada pela 2ª Turma Recursal Cível do Colégio Recursal dos Juizados Especiais do Tribunal de Justiça de São Paulo (TJ-SP). A decisão determinou que um banco indenizasse uma cliente por danos morais após ela ser vítima do golpe do cartão. Em primeira instância, o processo havia sido parcialmente julgado procedente, com a juíza reconhecendo a responsabilidade do banco pela fraude, mesmo que a cliente tenha entregado seu cartão a um golpista e se descuidado com a senha.</p>
+
+            <p><h2>O Caso</p></h2>
+            <p>O incidente ocorreu quando a mulher estava em um táxi e foi enganada pelo motorista, que trocou seu cartão por um idêntico no momento do pagamento. Suspeita-se que ele tenha visto a senha dela enquanto ela a digitava. Após as compras fraudulentas serem realizadas, o banco se recusou a cancelar os valores, alegando que a cliente não havia cuidado adequadamente do cartão nem da senha, responsabilizando-a pela fraude.</p>
+
+            <p><h2>A Decisão</h2></p>
+            <p>No entanto, a relatora do caso, juíza Beatriz de Souza Cabezas, destacou que as transações realizadas com o cartão não condiziam com o padrão habitual de gastos da cliente, evidenciando que se tratava de movimentações atípicas feitas por meio de fraude. A juíza considerou que a responsabilidade pela fraude era do banco, já que as transações fugiram do perfil de gastos da vítima, sendo, portanto, inexigíveis.</p>
+
+            <p><h2>Dano Moral Presumido</h2></p>
+            <p>A decisão também incluiu a concessão de indenização por danos morais, considerando os transtornos, aborrecimentos e frustrações sofridos pela cliente. A relatora afirmou que não era necessário comprovar os danos concretos, uma vez que o atendimento inadequado e a falha na solução do problema pela instituição financeira geraram os danos presumidos.</p>
+
+            <p><h2>Conclusão</p></h2>
+            <p>Esse caso reforça a responsabilidade dos bancos em situações de fraude, mesmo que a vítima tenha cometido algum erro, como descuido com o cartão ou a senha. A decisão do TJ-SP reafirma que a fraude é um risco interno das instituições financeiras e que devem elas assumir a responsabilidade pelos danos causados aos consumidores. A cliente, assessorada pelo advogado Roberto Tebar Neto, teve seus direitos reconhecidos pela justiça.</p>">
+                <img src="../imagens/golpe.jpg" alt="Imagem da notícia">
+                <h2 class="blog-title">TJ-SP define que banco é responsável por fraude realizada por golpista</h2>
+                <p class="blog-summary">Golpe do cartão e responsabilidade do banco: A Justiça decide que a instituição financeira deve indenizar o cliente vítima de fraude. Descubra como a negligência bancária foi crucial para a decisão.</p>
+                <p class="blog-meta">Fonte: Consultor Jurídico - Data: 06/03/2024</p>
+                <a href="#" class="read-more" onclick="openNews(this)">Leia mais</a>
+            </div>
+            <!-- Continue adicionando as outras notícias aqui seguindo o mesmo padrão -->
+        </div>
+    </div>
+
+    <!-- Página de notícia completa -->
+    <!-- Página de notícia completa -->
+<div class="news-page" id="news-page">
+    <div class="container">
+        <a href="#" id="back-to-home">← Voltar</a>
+        <h1 id="news-title"></h1>
+        <p id="news-content"></p>
+    </div>
+</div>
+
+<a href="../index.html" target="_self" style="text-decoration: none;"><button type="button" class="btn-inicio">Inicio</button></a>
+
+<script>
+    function openNews(element) {
+        const card = element.closest('.blog-card');
+        const title = card.getAttribute('data-title');
+        const content = card.getAttribute('data-content');
+
+        // Esconde a página inicial e mostra a notícia completa
+        document.querySelector('.container').style.display = 'none';
+        document.querySelector('.news-page').style.display = 'block';
+
+        // Define o conteúdo da notícia com HTML
+        document.getElementById('news-title').textContent = title;
+        document.getElementById('news-content').innerHTML = content;
+    }
+
+    document.getElementById('back-to-home').onclick = function() {
+        // Mostra a página inicial
+        document.querySelector('.container').style.display = 'block';
+        // Esconde a página da notícia
+        document.querySelector('.news-page').style.display = 'none';
+    };
+</script>
+
+</body>
+</html>

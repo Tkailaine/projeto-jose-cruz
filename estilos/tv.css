@@ -1,0 +1,89 @@
+@charset "UTF-8";
+
+.bandeira{
+    flex-direction: row;
+}
+
+.slide-title {
+  bottom: 10%;
+}
+
+.slide h2 {
+  font-size: 2em;
+
+}
+
+.visivel{
+    display: none;
+  }
+.areas{
+    font-size: 1em;
+  }
+  .imagem-destaque{
+    width: 40%;
+    margin-right: 50px;
+  }
+  
+  
+.oculto{
+    display: block;
+    }
+
+.area-principal{
+    flex-direction: row; 
+}
+.ft-atuacao{
+    height: 700px;   
+    }   
+    
+    
+
+
+    .adv-section {
+      flex-direction: row;
+      width: 95%;
+      gap: 0px;
+    
+     }
+
+
+
+.adv-text {
+  max-width: 600px;
+ 
+}
+
+.sessao-footer{
+    gap: 40px;
+    justify-content: start;
+    flex-direction: row;
+  }
+  
+  .sessao-footer > div{
+  margin-top: 25px;
+  margin-right: 60px;
+  }
+  
+  .sessao-conquistas{
+    height: 200px;
+  }
+  
+  .countainer-principal-counter{
+    display: flex;
+    justify-content: center;
+  }
+  
+  .links-uteis > li{
+    font-size: 1.4em;
+    margin: 20px 0px;
+  }
+  
+  .form {
+  
+    width: 300px;
+    font-size: 1.125rem;
+  }
+  
+
+  
+
