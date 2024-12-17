@@ -2,6 +2,7 @@
 const menuToggle = document.getElementById('menuToggle');
 const closeMenu = document.getElementById('closeMenu');
 const menu = document.getElementById('menu');
+const menuLinks = document.querySelectorAll('nav.menu ul li a'); // Seleciona todos os links no menu
 
 // Abre o menu ao clicar no botão hamburger
 menuToggle.addEventListener('click', () => {
@@ -11,6 +12,13 @@ menuToggle.addEventListener('click', () => {
 // Fecha o menu ao clicar no botão de fechar
 closeMenu.addEventListener('click', () => {
   menu.classList.remove('active');
+});
+
+// Fecha o menu ao clicar em um link de navegação (quando em telas pequenas)
+menuLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    menu.classList.remove('active');
+  });
 });
 
 
